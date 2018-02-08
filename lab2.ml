@@ -49,9 +49,9 @@ Now implement the two functions curry and uncurry.
 ......................................................................*)
 
 
-let curry (f : ('a * 'b) -> 'g) = fun(x : 'a) -> fun (y: 'b) -> f (x, y);;
+let curry (f : ('a * 'b) -> 'g) = fun(x : 'a) -> fun (y : 'b) -> f (x, y);;
      
-let uncurry = fun _ -> failwith "uncurry not implemented" ;;
+let uncurry (f: 'a -> 'b -> 'g) = fun((x, y) : 'a * 'b) -> f x y;;
 
 (*......................................................................
 Exercise 2: OCaml's built in binary operators, like ( + ) and ( * ) are
