@@ -66,8 +66,8 @@ Using your uncurry function, define uncurried plus and times
 functions.
 ......................................................................*)
 
-let plus =
-  fun _ -> failwith "plus not implemented"
+let plus (f: int -> int -> int) = fun((x, y) : (int * int)) -> f x y;;
+  
      
 let times =
   fun _ -> failwith "times not implemented" ;;
