@@ -34,6 +34,10 @@ takes them all at once in a tuple.)
 To think about before you start coding:
 
   * What should the types of curry and uncurry be?
+    curry f xs: takes an 'uncurried function' -> a curry function
+      Type of the curried function : 'g
+
+    uncurried function: takes a 'a * 'b -> 'g 
 
   * What is an example of a function that curry could apply to?
     Uncurry?
@@ -44,7 +48,8 @@ To think about before you start coding:
 Now implement the two functions curry and uncurry.
 ......................................................................*)
 
-let curry = fun _ -> failwith "curry not implemented" ;;
+
+let curry (f : ('a * 'b) -> 'g) = fun(x : 'a) -> fun (y: 'b) -> f (x, y);;
      
 let uncurry = fun _ -> failwith "uncurry not implemented" ;;
 
